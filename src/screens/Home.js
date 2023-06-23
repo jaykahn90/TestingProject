@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
+import Menu from '../component/Menu';
 
 const Home = props => {
   const description = 'Dummy App For Learning JEST & DETOX.';
@@ -11,7 +12,7 @@ const Home = props => {
           resizeMode="contain" //when using this property then in iOS there is no borderRadius.
           source={require('../../assets/images.jpg')}
         />
-        <Text style={styles.mainHeader}>Welcome to</Text>
+        <Text style={styles.mainHeader}>{props.mainScreenWelcome}</Text>
         <Text
           style={[
             styles.mainHeader,
@@ -21,6 +22,18 @@ const Home = props => {
           {props.mainScreenTitle}
         </Text>
         <Text style={styles.paraStyle}>{description}</Text>
+      </View>
+      <View style={styles.menuStyle}>
+        <View style={styles.lineStyle}></View>
+        <Menu />
+        <View
+          style={[
+            styles.lineStyle,
+            {
+              marginVertical: 20,
+            },
+          ]}
+        ></View>
       </View>
     </View>
   );
@@ -63,6 +76,10 @@ const styles = StyleSheet.create({
     marginTop: 30,
     paddingBottom: 50,
     lineHeight: 26,
+  },
+  lineStyle: {
+    borderWidth: 0.5,
+    borderColor: 'grey',
   },
 });
 
