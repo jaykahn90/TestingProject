@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 
-const Home = () => {
+const Home = props => {
   const description = 'Dummy App For Learning JEST & DETOX.';
   return (
     <View style={styles.mainContainer}>
@@ -18,7 +18,7 @@ const Home = () => {
             {fontSize: 33, color: '#4c5dab', marginTop: 0},
           ]}
         >
-          Testing App
+          {props.mainScreenTitle}
         </Text>
         <Text style={styles.paraStyle}>{description}</Text>
       </View>
