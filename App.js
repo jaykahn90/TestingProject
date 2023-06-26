@@ -16,7 +16,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         {/* HomeScreen */}
-        <Stack.Screen name="Home">
+        <Stack.Screen name="Home" options={{headerShown: false}}>
           {props => (
             <Home
               {...props}
@@ -27,16 +27,56 @@ export default function App() {
         </Stack.Screen>
 
         {/* CourseScreen */}
-        <Stack.Screen name="Course" component={Course} />
+        <Stack.Screen
+          name="Course"
+          component={Course}
+          options={{
+            headerTitleStyle: {
+              fontSize: 25,
+            },
+            headerTitle: 'Courses',
+            headerTitleAlign: 'center',
+          }}
+        />
 
         {/* UserData */}
-        <Stack.Screen name="User Data" component={UserData} />
+        <Stack.Screen
+          name="User Data"
+          component={UserData}
+          options={{
+            headerTitleStyle: {
+              fontSize: 25,
+            },
+
+            headerTitleAlign: 'center',
+          }}
+        />
 
         {/* AboutScreen */}
-        <Stack.Screen name="About" component={About} />
+        <Stack.Screen
+          name="About"
+          component={About}
+          options={{
+            headerTitleStyle: {
+              fontSize: 25,
+            },
+
+            headerTitleAlign: 'center',
+          }}
+        />
 
         {/* Contact */}
-        <Stack.Screen name="Contact" component={Contact} />
+        <Stack.Screen
+          name="Contact"
+          component={Contact}
+          options={{
+            headerTitleStyle: {
+              fontSize: 25,
+            },
+
+            headerTitleAlign: 'center',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
